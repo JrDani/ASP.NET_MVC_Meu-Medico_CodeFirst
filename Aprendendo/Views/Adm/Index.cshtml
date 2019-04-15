@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Acesso restrito";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Bem vindo Admin</h2>
+
+<div id="adm-nav" class="mt-4">
+    <h3 >Adicionar</h3>
+    <div class="row mt-3">
+        <div class="col-3 border py-4 text-center" style="background-color: #A3E385">
+            <a href='@Url.Action("Medicos","Adm")' class="text-white font-weight-bold">
+                <i class="fa fa-plus fa-3x d-block" " aria-hidden="true"></i> Médico
+            </a>
+        </div>
+        <div class="col-3 border py-4 text-center text-white" style="background-color: #33C6CF">
+            <a href='@Url.Action("Cidades","Adm")' class="text-white font-weight-bold">
+                <i class="fa fa-plus fa-3x d-block" " aria-hidden="true"></i> Cidade
+            </a>
+        </div>
+        <div class="col-3 border py-4 text-center text-white" style="background-color: #FFAF58">
+            <a href='@Url.Action("Especialidades","Adm")' class="text-white font-weight-bold">
+                <i class="fa fa-plus fa-3x d-block" " aria-hidden="true"></i> Especialidade
+            </a>
+        </div>
+        <div class="col-3 border py-4 text-center text-white" style="background-color: #147D82">            
+            <a href='@Url.Action("Estados","Adm")' class="text-white font-weight-bold">
+                <i class="fa fa-plus fa-3x d-block" " aria-hidden="true"></i> Estados
+            </a>
+        </div>
+        <div class="col-3 border py-4 text-center text-white" style="background-color: #D74BA4">
+            <a href='@Url.Action("Paises","Adm")' class="text-white font-weight-bold">
+                <i class="fa fa-plus fa-3x d-block" " aria-hidden="true"></i> Paises
+            </a>
+        </div>
+    </div>
+</div>
+

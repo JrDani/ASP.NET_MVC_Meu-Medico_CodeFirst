@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Login";
+}
+
+<h1>Fazendo login</h1>
+
+<form action="/Login/Autentica" method="post">
+   
+    @Html.ValidationMessage(string.Empty, "" ,new { @class = "text-danger" })
+    <div>
+        <label>Username</label>
+        <input type="text" name="username" value="" class="form-control" />
+    </div>
+    <div>
+        <label>Password</label>
+        <input type="password" name="password" value="" class="form-control" />
+    </div>
+    <p class="text-muted">user: adm, password: 123</p>
+    <input type="submit" name="name" value="Entrar" class="btn btn-primary mt-3" />
+</form>
+
+

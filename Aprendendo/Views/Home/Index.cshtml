@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Cade meu médico";
+    var esp_selected = "";
+    var cid_selected = "";
+}
+
+<h1>Bem vindo</h1>
+<p class="mt-4">Aqui você encontrará os médicos especialistas de sua cidade</p>
+
+<div class="my-3">
+    <form action="/" method="get" class="form-inline">        
+        <select name="cidade" class="form-control">
+            <option value="0" selected>Mostrar em todas as cidade</option>
+            @foreach (var cidade in ViewBag.Cidades)
+            {
+                if (@Request.Params["cidade"] != null)
+                {
+                    cid_selected = (int.Parse(@Request.Params["cidade"]) == cidade.Id ? "selected" : "");
+                }
+                <option value="@cidade.Id" @cid_selected>@cidade.Nome</option>
+            }
+        </select>
+        <select name="especialidade" class="form-control ml-3">
+            <option value="0" selected>Qualquer especialidade</option>
+            @foreach(var esp in ViewBag.Especialidades)
+            {
+                if (@Request.Params["especialidade"] != null)
+                {
+                    esp_selected = (int.Parse(@Request.Params["especialidade"]) == esp.Id ? "selected" : "");
+                }
+                <option value="@esp.Id" @esp_selected>@esp.Nome</option>
+            }
+        </select>
+        <input type="submit" value="Buscar" class="btn btn-success ml-3"/>
+    </form>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Especialidade</th>
+            <th>Cidade</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var medico in ViewBag.Medicos)
+        {
+        <tr>
+            <td>@medico.Id</td>
+            <td>@medico.Nome</td>
+            <td>@medico.Especialidade.Nome</td>
+            <td>@medico.Cidade.Nome</td>
+        </tr>
+        }
+        </tbody>
+    </table>

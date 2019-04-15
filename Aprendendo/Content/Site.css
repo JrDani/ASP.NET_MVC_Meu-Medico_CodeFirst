@@ -1,0 +1,6 @@
+﻿#adm-nav a{
+    font-size: 1.3em
+}
+#adm-nav a:hover {
+    text-decoration:none;
+}
